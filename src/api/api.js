@@ -35,6 +35,26 @@ class Api {
     }
   }
 
+  async addOutcome (outcome){
+    try {
+      const {data} = await this.api.post('/outcome',outcome);
+      return data;
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
+  }
+
+  async getIncomes () {
+    try {
+      const {data} = await this.api.get('/income');
+      return data;
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
+  }
+
 }
 
 const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';

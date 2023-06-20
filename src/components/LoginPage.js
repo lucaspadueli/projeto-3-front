@@ -16,6 +16,7 @@ function LoginPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      
       await api.login({ username, password });
       navigate('/');
     } catch (error) {

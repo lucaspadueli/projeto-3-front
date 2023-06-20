@@ -1,22 +1,24 @@
 import { useState } from "react";
 import api from "../api/api";
 
-function AddIncomePage () {
+function AddOutcomePage () {
 
 const [description,setDescription] = useState('');
 const [value,setValue] = useState(0);
 const [month,setMonth] = useState('');
 const [year,setYear] = useState('');
+const [expenseType,setExpenseType] = useState('');
 
   const handleDescription = (e) => setDescription(e.target.value);
   const handleValue = (e) => setValue(e.target.value);
   const handleMonth = (e) => setMonth(e.target.value);
   const handleYear = (e) => setYear(e.target.value);
+  const handleType = (e) => setExpenseType(e.target.value);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const income = {
-      description, value, month, year
+      description, value,expenseType, month, year
     }
     await api.addIncome(income);
     resetForm();
@@ -29,7 +31,17 @@ const [year,setYear] = useState('');
     setYear('');
   }
 
-
+  const expenseTypeOptions = [
+    "Housing",
+    "Utilities",
+    "Grocery",
+    "Savings",
+    "Other",
+    "Education",
+    "Debt Payments",
+    "Miscellaneous Expenses",
+    "Transportation",
+  ];
 
 
 return(
@@ -47,6 +59,16 @@ return(
           
           <label htmlFor="value">Value:</label>
           <input id="value" type="number" value={value} onChange={handleValue} />
+
+          <label htmlFor="type">Expense Type:</label>
+        <select id="type" value={expenseType} onChange={handleType}>
+          <option value="">Select an option</option>
+          {expenseTypeOptions.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
           
           <label htmlFor="month">Month:</label>
           <textarea id="month" type='text' value={month} onChange={handleMonth} />
@@ -66,5 +88,4 @@ return(
 
 }
 
-export default AddIncomePage;
-
+export default AddOutcomePage;
