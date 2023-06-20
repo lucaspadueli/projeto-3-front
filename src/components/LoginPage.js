@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import { AuthContext } from '../context/auth.context';
 import api from '../api/api';
 import '../App.css';
 
@@ -7,6 +8,7 @@ function LoginPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const { storeToken, authenticateUser } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
@@ -16,7 +18,9 @@ function LoginPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await api.login({ username, password });
+      const {authToken} = await api.login({ username, password });
+      storeToken(authToken);
+      authenticateUser();
       navigate('/');
     } catch (error) {
       setErrorMessage(error.response.data.error);
