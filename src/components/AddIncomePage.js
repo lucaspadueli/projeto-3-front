@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
-
+import { useState } from "react";
 import api from "../api/api";
+const years = ["2022", "2023"];
+const months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+
+
 
 function AddIncomePage () {
 
@@ -50,10 +53,27 @@ return(
           <input id="value" type="number" value={value} onChange={handleValue} />
           
           <label htmlFor="month">Month:</label>
-          <textarea id="month" type='text' value={month} onChange={handleMonth} />
+          <select id="month" type='text' value={month} onChange={handleMonth}>
+
+          <option>Selecione uma opção </option>
+          {months.map((month)=> (
+            <option key = {month} value = {month}>
+              {month}
+            </option>
+          ))}
+
+
+          </select>
           
           <label htmlFor="year">Year:</label>
-          <input id="year" type="text" value={year} onChange={handleYear} />
+          <select id="year" type="text" value={year} onChange={handleYear}>
+            <option value=""> Select an option </option>
+            {years.map((year)=> (
+              <option key = {year} value = {year}>
+                {year}
+              </option>
+            ))}
+          </select>
 
           <button type="submit">Submit</button>
       </form>

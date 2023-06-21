@@ -3,7 +3,7 @@ import SignupPage from './components/SignupPage';
 import LoginPage from './components/LoginPage';
 import AddIncomePage from './components/AddIncomePage';
 import AddOutcomePage from './components/AddOutcomePage';
-import StatementPage from './components/StatementPage';import AddIncomePage from './components/AddIncomePage';
+import StatementPage from './components/StatementPage';
 const App = () => {
   return (
     <div>
@@ -14,7 +14,6 @@ const App = () => {
         <Route path="/add-income" element={<AddIncomePage/>} />
         <Route path= "add-outcome" element={<AddOutcomePage/>} />
         <Route path= "all-incomes" element={<StatementPage/>} />
-        <Route path="/add-income" element={<AddIncomePage/>} />
       </Routes>
     </div>
   );

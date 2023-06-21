@@ -17,10 +17,10 @@ const [expenseType,setExpenseType] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const income = {
+    const outcome = {
       description, value,expenseType, month, year
     }
-    await api.addIncome(income);
+    await api.addOutcome(outcome);
     resetForm();
   }
 

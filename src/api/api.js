@@ -36,7 +36,6 @@ class Api {
     }
   }
 
-<<<<<<< HEAD
   async addIncome (income){
     try {
       const {data} = await this.api.post('/income',income);
@@ -67,16 +66,6 @@ class Api {
     }
   }
 
-=======
-  verify = async (token) => {
-    const { data } = await this.api.get('/auth/verify', {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    })
-    return data;
-  }
->>>>>>> main
 }
 
 
