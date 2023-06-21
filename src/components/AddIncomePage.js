@@ -1,4 +1,5 @@
-import { useState } from "react";
+import React, { useState } from 'react';
+
 import api from "../api/api";
 
 function AddIncomePage () {
@@ -67,4 +68,3 @@ return(
 }
 
 export default AddIncomePage;
-

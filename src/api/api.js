@@ -1,10 +1,21 @@
 import axios from 'axios';
+import { retrieveToken } from '../utils/local-storage.utils';
 
 class Api {
   constructor(baseURL) {
     this.api = axios.create({
       baseURL
-    });
+    })
+
+    this.api.interceptors.request.use((req) => {
+      const token = retrieveToken();
+
+      if(token) {
+        req.headers.Authorization = `Bearer ${token}`;
+      }
+
+      return req;
+    })
   }
 
   async signup({ username, email, password }) {
@@ -25,6 +36,7 @@ class Api {
     }
   }
 
+<<<<<<< HEAD
   async addIncome (income){
     try {
       const {data} = await this.api.post('/income',income);
@@ -55,7 +67,19 @@ class Api {
     }
   }
 
+=======
+  verify = async (token) => {
+    const { data } = await this.api.get('/auth/verify', {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+    return data;
+  }
+>>>>>>> main
 }
+
+
 
 const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 const api = new Api(apiUrl);
