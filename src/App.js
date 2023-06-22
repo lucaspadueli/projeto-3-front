@@ -14,6 +14,6 @@ const App = () => {
         <Route path='/login' element={<IsAnon><LoginPage /></IsAnon>} />
       </Routes>
     </div>
-  );
+  )
 };
 export default App;
