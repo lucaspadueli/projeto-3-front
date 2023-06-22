@@ -13,8 +13,8 @@ function Navbar() {
                     <li> <Link to="/Sobre">Sobre</Link></li>
                 </div>
                 <div className="direita">
-                    <li> <Link to="/Cadastrar">Cadastar</Link></li>
-                    <li> <Link to="/Entrar">Entrar</Link></li>
+                    <li> <Link to="/signup">Cadastar</Link></li>
+                    <li> <Link to="/login">Entrar</Link></li>
                 </div>
 
             </ul>
