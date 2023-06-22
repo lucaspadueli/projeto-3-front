@@ -66,6 +66,16 @@ class Api {
     }
   }
 
+  async getMonthlyStatement( selectedMonth, selectedYear) {
+    try {
+      const { data } = await this.api.get(`/statement/${selectedMonth}/${selectedYear}`);
+      return data;
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
+  }
+
 }
 
 
