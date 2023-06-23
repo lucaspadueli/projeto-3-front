@@ -76,6 +76,62 @@ class Api {
     }
   }
 
+  async getOneOutcome (outcomeId){
+    try {
+      const {data} = await this.api.get(`/outcome/${outcomeId}`);
+      return data;
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
+  }
+
+  async editOutcome(outcomeId, updatedOutcome) {
+    try {
+      const {data} = await this.api.put(`/outcome/${outcomeId}`, updatedOutcome);
+      return data;
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
+  }
+
+  removeOutcome = async (outcomeId) => {
+    try {
+      await this.api.delete(`/outcome/${outcomeId}`);
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
+  }
+
+  async getOneIncome (incomeId){
+    try {
+      const {data} = await this.api.get(`/income/${incomeId}`);
+      return data;
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
+  }
+
+  removeIncome = async (incomeId) => {
+    try {
+      await this.api.delete(`/income/${incomeId}`);
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
+  }
+  async editIncome(incomeId, updatedIncome) {
+    try {
+      const {data} = await this.api.put(`/income/${incomeId}`, updatedIncome);
+      return data;
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
+  }
 }
 
 

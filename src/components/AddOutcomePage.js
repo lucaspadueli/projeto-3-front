@@ -1,6 +1,6 @@
 import { useState } from "react";
 import api from "../api/api";
-
+import { useNavigate } from "react-router-dom";
 function AddOutcomePage () {
 
 const [description,setDescription] = useState('');
@@ -8,7 +8,7 @@ const [value,setValue] = useState(0);
 const [month,setMonth] = useState('');
 const [year,setYear] = useState('');
 const [expenseType,setExpenseType] = useState('');
-
+const navigate = useNavigate();
   const handleDescription = (e) => setDescription(e.target.value);
   const handleValue = (e) => setValue(e.target.value);
   const handleMonth = (e) => setMonth(e.target.value);
@@ -22,6 +22,7 @@ const [expenseType,setExpenseType] = useState('');
     }
     await api.addOutcome(outcome);
     resetForm();
+    navigate('/monthly-statement')
   }
 
   const resetForm = () => {

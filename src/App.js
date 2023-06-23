@@ -5,6 +5,8 @@ import AddIncomePage from './components/AddIncomePage';
 import AddOutcomePage from './components/AddOutcomePage';
 import StatementPage from './components/StatementPage';
 import StatementMonth from './components/StatementMonth';
+import OneOutcomePage from './components/OneOutcomePage';
+import OneIncomePage from './components/OneIncomePage';
 const App = () => {
   return (
     <div>
@@ -16,6 +18,8 @@ const App = () => {
         <Route path= "add-outcome" element={<AddOutcomePage/>} />
         <Route path= "all-incomes" element={<StatementPage/>} />
         <Route path="monthly-statement" element = {<StatementMonth/>} />
+        <Route path = "/outcome/:outcomeId" element = {<OneOutcomePage/>} />
+        <Route path = "/income/:incomeId" element = {<OneIncomePage/>} />
       </Routes>
     </div>
   );
