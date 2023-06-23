@@ -135,7 +135,6 @@ class Api {
 }
 
 
-
 const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 const api = new Api(apiUrl);
 

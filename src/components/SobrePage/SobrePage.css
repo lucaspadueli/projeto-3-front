@@ -1,0 +1,35 @@
+.sobre-page {
+    background-color: white;
+    text-align: center;
+    background-image: url("../images/wallpaper.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    padding-top: 14vh;
+    padding-bottom: 35vh;
+}
+
+h1 {
+    display: inline-flex;
+    margin: 5vh auto;
+    color: white;
+    font-weight: 400;
+    font-family: 'Alkatra', cursive;
+    ;
+    font-size: 3em;
+}
+
+.sobre-oprojeto {
+    width: 63%;
+    margin: 2vh auto ;
+    font-size: 1.5em;
+    font-weight: 300;
+    color: rgb(102, 86, 86);
+    background-color: rgba(253, 249, 249,0.8);
+    border-radius: 25px;
+    box-sizing:border-box;
+    padding: 20px;
+
+
+}
