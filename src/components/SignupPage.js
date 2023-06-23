@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import api from '../api/api';
 import '../App.css';
+import './login.css';
+
 
 function SignupPage() {
   const [username, setUsername] = useState('');
@@ -50,7 +52,9 @@ function SignupPage() {
 
   return (
     <div className='SignupPage'>
-      <h1>FAÇA SEU CADASTRO</h1>
+    <Link to = "/"> <button className='back-btn'>Voltar</button> </Link>
+    <div> 
+    <h1>FAÇA SEU CADASTRO</h1>
       {successMessage && <p className='success-message'>{successMessage}</p>}
       <form onSubmit={handleSubmit}>
         <label htmlFor='username'>Username</label>
@@ -81,6 +85,10 @@ function SignupPage() {
 
       <p>Already have an account?</p>
       <Link to='/login'>Login</Link>
+    
+    
+    </div>
+    
     </div>
   );
 }

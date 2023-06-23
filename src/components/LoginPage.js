@@ -3,6 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { AuthContext } from '../context/auth.context';
 import api from '../api/api';
 import '../App.css';
+import './login.css';
 
 function LoginPage() {
   const [username, setUsername] = useState('');
@@ -30,6 +31,10 @@ function LoginPage() {
 
   return (
     <div className="LoginPage">
+    <div>
+    <Link to = "/"> <button className='back-btn'>Voltar</button> </Link>
+    </div>
+    
       <h1>FAÇA SEU LOGIN</h1>
 
       <form onSubmit={handleSubmit}>
