@@ -9,7 +9,7 @@ function Navbar() {
             <ul className="nav-list">
 
                 <div className="esquerda">
-                    <li> <Link to="/Home">Home</Link></li>
+                    <li> <Link to="/">Home</Link></li>
                     <li> <Link to="/Sobre">Sobre</Link></li>
                 </div>
                 <div className="direita">

@@ -1,10 +1,11 @@
 import "./SobrePage.css";
 import React from "react";
-
+import Navbar from "../NavBar/NavBar";
 const SobrePage = () => {
 
     return (
         <div className="sobre-page">
+        <Navbar/>
             <h1 id = "h1-sobre"> Projeto Finanças em Equilíbrio: Controle seus Gastos e Transforme sua Vida </h1>
             <div className="sobre-oprojeto">
 
