@@ -7,7 +7,7 @@ function HomePage ()  {
     return (
         <div className="home-page">
 
-            <h1>Projeto Financeiro</h1>
+            <h1>Finanças em Equilíbrio</h1>
 
             <img src={homePageImg1} alt="financeiro.jpg" />
 
