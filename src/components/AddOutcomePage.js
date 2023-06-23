@@ -79,7 +79,7 @@ return(
         </select>
           
         <label htmlFor="month">Mês:</label>
-          <select id="month" type='text' value={month} onChange={handleMonth}>
+          <select id="month-outcome" type='text' value={month} onChange={handleMonth}>
 
           <option>Selecione uma opção </option>
           {months.map((month)=> (
@@ -92,7 +92,7 @@ return(
           </select>
           
           <label htmlFor="year">Ano:</label>
-          <select id="year" type="text" value={year} onChange={handleYear}>
+          <select id="year-outcome" type="text" value={year} onChange={handleYear}>
             <option value=""> Selecione uma opção </option>
             {years.map((year)=> (
               <option key = {year} value = {year}>
