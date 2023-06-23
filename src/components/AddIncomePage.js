@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import api from "../api/api";
 const years = ["2022", "2023"];
 const months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
@@ -11,7 +12,7 @@ const [description,setDescription] = useState('');
 const [value,setValue] = useState(0);
 const [month,setMonth] = useState('');
 const [year,setYear] = useState('');
-
+const navigate = useNavigate();
   const handleDescription = (e) => setDescription(e.target.value);
   const handleValue = (e) => setValue(e.target.value);
   const handleMonth = (e) => setMonth(e.target.value);
@@ -24,6 +25,7 @@ const [year,setYear] = useState('');
     }
     await api.addIncome(income);
     resetForm();
+    navigate("/monthly-statement");
   }
 
   const resetForm = () => {

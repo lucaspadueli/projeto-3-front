@@ -50,7 +50,14 @@ console.log(monthlyStatement)
         <ul> 
             <h3> Entradas do mês {selectedMonth}: </h3>
         {monthlyStatement?.incomes.map((income)=>(
-            <li key = {income._id}> Descrição:{income.description} Valor: {income.value}    </li> 
+            <li key = {income._id}> Descrição:{income.description} Valor: {income.value} usuário: {income.user} 
+            
+            <Link to = {`/income/${income._id}`}>
+            <button>Editar/Remover</button>
+
+            </Link>
+            
+            </li> 
         ))}
         
         </ul>
@@ -63,9 +70,9 @@ console.log(monthlyStatement)
     <h3> Saídas do mês {selectedMonth}: </h3>
 {monthlyStatement?.outcomes.map((outcome)=>(
     
-    <li key = {outcome._id}> Descrição:{outcome.description} Valor: {outcome.value}  <Link to = {`monthly-statement/outcome/${outcome._id}`}>
+    <li key = {outcome._id}> Descrição:{outcome.description} Valor: {outcome.value}  <Link to = {`/outcome/${outcome._id}`}>
 <button>
-    Mostra a entrada.
+    Editar/Remover
 </button>
 
     </Link>    </li>
