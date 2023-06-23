@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../api/api";
+import './addIncome.css';
 const years = ["2022", "2023"];
 const months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
 
@@ -20,6 +21,9 @@ const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if(!description || !value || !year || !month){
+      return
+    }
     const income = {
       description, value, month, year
     }
@@ -42,19 +46,19 @@ return(
 
 <div className="add-income">
 
-<h1> Add your incomes below</h1>
+<h3 id="h3-add-income"> Adicione suas entradas de dinheiro aqui.</h3>
 
-<p> For the months input use the number related to the month, for example: "01" for January "12" for December</p>
+<p className="warning"> Atenção: Todos os campos são obrigatórios. </p>
 
-<form onSubmit={handleSubmit}>
+<form className="add-income-form" onSubmit={handleSubmit}>
           
-          <label htmlFor="description">Description:</label>
+          <label htmlFor="description">Descrição:</label>
           <input id="description" type="text" value={description} onChange={handleDescription} />
           
-          <label htmlFor="value">Value:</label>
+          <label htmlFor="value">Valor:</label>
           <input id="value" type="number" value={value} onChange={handleValue} />
           
-          <label htmlFor="month">Month:</label>
+          <label htmlFor="month">Mês:</label>
           <select id="month" type='text' value={month} onChange={handleMonth}>
 
           <option>Selecione uma opção </option>
@@ -67,9 +71,9 @@ return(
 
           </select>
           
-          <label htmlFor="year">Year:</label>
+          <label htmlFor="year">Ano:</label>
           <select id="year" type="text" value={year} onChange={handleYear}>
-            <option value=""> Select an option </option>
+            <option value=""> Selecione uma opção </option>
             {years.map((year)=> (
               <option key = {year} value = {year}>
                 {year}
@@ -77,7 +81,7 @@ return(
             ))}
           </select>
 
-          <button type="submit">Submit</button>
+          <button className="add-income-button" type="submit">Enviar</button>
       </form>
 
 

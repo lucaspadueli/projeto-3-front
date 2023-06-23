@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import api from '../api/api';
+import './oneOutcome.css'
 
 function OneOutcomePage() {
   const [outCome, setOutcome] = useState(null);
@@ -10,11 +11,13 @@ function OneOutcomePage() {
   const [month, setMonth] = useState('');
   const [year, setYear] = useState('');
   const [value, setValue] = useState(0);
+  
 
   const handleMonth = (e) => setMonth(e.target.value);
   const handleYear = (e) => setYear(e.target.value);
   const handleDescription = (e) => setDescription(e.target.value);
   const handleValue = (e) => setValue(e.target.value);
+  
 
   const { outcomeId } = useParams();
   const navigate = useNavigate();
@@ -49,12 +52,12 @@ function OneOutcomePage() {
   }, [fetchOutcome])
 
   return (
-    <div className="BookDetails">
+    <div className="Outcome-details">
       {outCome && (
         <>
           {isFormOpen ? (
-            <div className="AddBook">
-              <form onSubmit={handleSubmit}>
+            <div className="Add-outcome">
+              <form className="form-edit" onSubmit={handleSubmit}>
                 <label htmlFor="description">Descrição:</label>
                 <input id="description" type="text" value={description} onChange={handleDescription} />
                 
@@ -72,10 +75,20 @@ function OneOutcomePage() {
             </div>
           ) : (
             <>
-              <h1> Detalhes do gasto "{outCome.description}". </h1>
-              <span>Valor: {outCome.value}</span>
+              <h3 className='h3-out'> Detalhes do gasto "{outCome.description}". </h3>
+              
+              <div className='details-out'> 
+              <p>Valor: {outCome.value}</p>
               <p>Mês: {outCome.month}</p>
               <p>Ano: {outCome.year}</p>
+              <button onClick={toggleIsFormOpen}>{isFormOpen ? 'Cancelar' : 'Editar'}</button>
+      <Link to='/monthly-statement'>
+        <button>Voltar</button>
+      </Link>
+      <button onClick={deleteOutcome}>Remover</button>
+
+              </div>
+              
             </>
           )}
         </>
@@ -83,11 +96,7 @@ function OneOutcomePage() {
 
             
 
-      <button onClick={toggleIsFormOpen}>{isFormOpen ? 'Cancelar' : 'Editar'}</button>
-      <Link to='/monthly-statement'>
-        <button>Voltar</button>
-      </Link>
-      <button onClick={deleteOutcome}>Remover</button>
+      
     </div>
   )
 }

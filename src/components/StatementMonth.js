@@ -1,6 +1,10 @@
 import { useState } from "react";
 import api from "../api/api";
 import { Link } from "react-router-dom";
+import './statementMonth.css';
+const years = ["2022", "2023"];
+const months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+
 function StatementMonth () {
 
 
@@ -24,6 +28,9 @@ function StatementMonth () {
     } 
     function handleSubmit(e) {
         e.preventDefault();
+        if(!selectedMonth || !selectedYear){
+            return
+        }
         fetchData();
     }
     const handleMonth = (e) => setSelectedMonth(e.target.value);
@@ -34,26 +41,49 @@ console.log(monthlyStatement)
 
     return (
         
-        <div> 
-<form className="try" onSubmit={handleSubmit}>
-        
-        <label htmlFor="selectedMonth">Mes:</label>
-         <input id="selectedMonth" type="text" value={selectedMonth} onChange={handleMonth} />
-         
-         <label htmlFor="selectedYear">Ano:</label>
-         <input id="selectedYear" type="text" value={selectedYear} onChange={handleYear} />
-        <button type="submit"> buscar </button>
-       </form>
+        <div className="statement-page"> 
 
-       <div className="incomes">
+        <h3 id="h3-stt"> Verifique aqui todo o seu extrato mensal:</h3>
+
+
+<form className="statement-form" onSubmit={handleSubmit}>
+        
+<label htmlFor="month">Mês:</label>
+          <select id="month" type='text' value={selectedMonth} onChange={handleMonth}>
+
+          <option>Selecione uma opção </option>
+          {months.map((month)=> (
+            <option key = {month} value = {month}>
+              {month}
+            </option>
+          ))}
+
+
+          </select>
+          
+          <label htmlFor="year">Ano:</label>
+          <select id="year" type="text" value={selectedYear} onChange={handleYear}>
+            <option value=""> Selecione uma opção </option>
+            {years.map((year)=> (
+              <option key = {year} value = {year}>
+                {year}
+              </option>
+            ))}
+          </select>
+
+
+        <button className="button-statement" type="submit"> Buscar </button>
+       </form>
+                <div className="extrato"> 
+                <div className="incomes">
 
         <ul> 
-            <h3> Entradas do mês {selectedMonth}: </h3>
+            <h3> Entradas do mês {selectedMonth} do ano {selectedYear}: </h3>
         {monthlyStatement?.incomes.map((income)=>(
-            <li key = {income._id}> Descrição:{income.description} Valor: {income.value} usuário: {income.user} 
+            <li key = {income._id}> Descrição:{income.description} Valor: ${income.value} usuário: {income.user} 
             
             <Link to = {`/income/${income._id}`}>
-            <button>Editar/Remover</button>
+            <button className="button-statement">Editar/Remover</button>
 
             </Link>
             
@@ -67,11 +97,11 @@ console.log(monthlyStatement)
        <div className="outcomes">
 
 <ul> 
-    <h3> Saídas do mês {selectedMonth}: </h3>
+    <h3> Saídas do mês {selectedMonth} do ano {selectedYear}: </h3>
 {monthlyStatement?.outcomes.map((outcome)=>(
     
-    <li key = {outcome._id}> Descrição:{outcome.description} Valor: {outcome.value}  <Link to = {`/outcome/${outcome._id}`}>
-<button>
+    <li className="descrição" key = {outcome._id}> Descrição:{outcome.description} Valor: ${outcome.value}  <Link to = {`/outcome/${outcome._id}`}>
+<button className="button-statement">
     Editar/Remover
 </button>
 
@@ -84,10 +114,15 @@ console.log(monthlyStatement)
 </div>
 
 <div className="totals">
-  <h3>Total de Entradas: {totalIncomes}</h3>
-  <h3>Total de Saídas: {totalOutcomes}</h3>
-  <h3>Balanço: {totalIncomes - totalOutcomes}</h3>
+  <h3>Total de Entradas: ${totalIncomes}</h3>
+  <h3>Total de Saídas: $ {totalOutcomes}</h3>
+  <h3>Seu balanço mensal é de: $ {totalIncomes - totalOutcomes}</h3>
 </div>
+                
+                
+                
+                </div>
+       
 
         </div>
         

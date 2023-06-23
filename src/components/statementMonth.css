@@ -1,0 +1,52 @@
+.statement-page{
+    height: 100vh;
+    background-color:rgb(145, 204, 221);
+}
+
+#h3-stt{
+    width: fit-content;
+    margin: 0 auto;
+    padding-top: 10vh;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.statement-form{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 7vh;
+}
+
+.button-statement{
+    height: 7vh;
+    width: 10vw;
+    border: 1px solid rgba(0, 0, 0, 0.523);
+    border-radius: 15px;
+    margin: 0 auto;
+    margin-top: 5vh;
+}
+
+.statement-form label{
+    font-size: 1.2em;
+    font-weight: 600;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+
+.statement-form select{
+    height: 5vh;
+    border-radius: 10px;
+    }
+
+    .extrato{
+        width: fit-content;
+        margin: 0 auto;
+        margin-top: 10vh;
+    }
+
+    .descrição{
+        font-size: 1.2em;
+    font-weight: 600;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    }

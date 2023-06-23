@@ -1,0 +1,14 @@
+.income-details{
+    height: 100vh;
+    background-color:rgb(145, 204, 221);
+}
+
+
+
+.form-ed{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: 0 auto;
+    
+}

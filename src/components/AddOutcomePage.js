@@ -1,6 +1,10 @@
 import { useState } from "react";
 import api from "../api/api";
 import { useNavigate } from "react-router-dom";
+import './addOutcome.css';
+const years = ["2022", "2023"];
+const months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+
 function AddOutcomePage () {
 
 const [description,setDescription] = useState('');
@@ -17,6 +21,9 @@ const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if(!description || !value || expenseType || !year || !month){
+      return
+    }
     const outcome = {
       description, value,expenseType, month, year
     }
@@ -47,13 +54,13 @@ const navigate = useNavigate();
 
 return(
 
-<div className="add-income">
+<div className="add-outcome">
 
-<h1> Add your incomes below</h1>
+<h3 id = "h3-add-outcome"> Adicione suas despesas abaixo:</h3>
 
-<p> For the months input use the number related to the month, for example: "01" for January "12" for December</p>
+<p className="warning"> Atenção: Todos os campos são obrigatórios. </p>
 
-<form onSubmit={handleSubmit}>
+<form className="add-outcome-form" onSubmit={handleSubmit}>
           
           <label htmlFor="description">Description:</label>
           <input id="description" type="text" value={description} onChange={handleDescription} />
@@ -63,7 +70,7 @@ return(
 
           <label htmlFor="type">Expense Type:</label>
         <select id="type" value={expenseType} onChange={handleType}>
-          <option value="">Select an option</option>
+          <option value="">Selecione uma opção</option>
           {expenseTypeOptions.map((option) => (
             <option key={option} value={option}>
               {option}
@@ -71,13 +78,30 @@ return(
           ))}
         </select>
           
-          <label htmlFor="month">Month:</label>
-          <textarea id="month" type='text' value={month} onChange={handleMonth} />
-          
-          <label htmlFor="year">Year:</label>
-          <input id="year" type="text" value={year} onChange={handleYear} />
+        <label htmlFor="month">Mês:</label>
+          <select id="month" type='text' value={month} onChange={handleMonth}>
 
-          <button type="submit">Submit</button>
+          <option>Selecione uma opção </option>
+          {months.map((month)=> (
+            <option key = {month} value = {month}>
+              {month}
+            </option>
+          ))}
+
+
+          </select>
+          
+          <label htmlFor="year">Ano:</label>
+          <select id="year" type="text" value={year} onChange={handleYear}>
+            <option value=""> Selecione uma opção </option>
+            {years.map((year)=> (
+              <option key = {year} value = {year}>
+                {year}
+              </option>
+            ))}
+          </select>
+
+          <button className="add-outcome-button" type="submit">Enviar</button>
       </form>
 
 

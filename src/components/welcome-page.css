@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra&family=Dancing+Script&display=swap');
+
+
+.welcome-page{
+    background-color: rgb(145, 204, 221);
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.greeting {
+    background-color:rgb(145, 204, 221); 
+    width: 100%;
+}
+
+.nav-welcome{
+    margin-top: 5vh;
+}
+
+#main-image{
+    width: 30vw;
+    border: 0;
+   margin-left: 15vw;
+    border-radius: 20px;
+}
+.quote{
+    width: 40vw;
+    margin-left: 10vw;
+    margin-top: 3vh;
+    font-family: 'Alkatra', cursive; font-family: 'Dancing Script', cursive;
+    font-size: 1.4em;
+
+}
+
+.options{
+    margin-top: 5vh;
+    margin-left: 10vw;
+}
+
+.options div{
+    margin-bottom: 5vh;
+    width: 30vw;
+}
+.options div h5{
+    margin-left: 6vw;
+}
+
+.options div p{
+    margin-top: 2vh;
+    width: 10vw;
+    margin-left: 6vw;
+    text-align:center;
+}
+
+.welcome-buttons{
+    width: 8vw;
+    font-size: 0.8em;
+    height: 7vh;
+    box-sizing: border-box;
+    padding: 5px;
+    border: 1px solid rgba(0,0,0,0.46);
+    border-radius: 15px;
+    margin-left: 7vw;
+    margin-top: 2vh;
+}
+
+.welcome-image-main{
+    margin-top: 10vh;
+    margin-left: 0;
+}
+
+#greeting-h1{
+    margin: 0 auto;
+    width: fit-content;
+    margin-top: 4vh;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+#greeting-h2{
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 5vh;
+}

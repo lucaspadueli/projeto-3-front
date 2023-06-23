@@ -1,0 +1,31 @@
+.Outcome-details{
+    height: 100vh;
+    background-color:rgb(145, 204, 221);
+}
+
+.h3-out{
+    width: fit-content;
+    margin: 0 auto;
+    padding-top: 10vh;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.details-out{
+    margin-top: 15vh;
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 5vh;
+}
+
+.details-out p{
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.form-edit{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: 0 auto;
+    
+}

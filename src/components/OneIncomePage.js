@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import api from '../api/api';
+import './oneIncome.css';
 
 function OneIncomePage() {
   const [income, setIncome] = useState(null);
@@ -49,12 +50,12 @@ function OneIncomePage() {
   }, [fetchIncome])
 
   return (
-    <div className="BookDetails">
+    <div className="income-details">
       {income && (
         <>
           {isFormOpen ? (
-            <div className="AddBook">
-              <form onSubmit={handleSubmit}>
+            <div className="add-income">
+              <form className='form-ed' onSubmit={handleSubmit}>
                 <label htmlFor="description">Descrição:</label>
                 <input id="description" type="text" value={description} onChange={handleDescription} />
                 
