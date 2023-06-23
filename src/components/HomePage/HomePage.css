@@ -17,17 +17,23 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 3em;
   }
+
+  .images {
+    display: flex;
+  }
   
   .home-page img {
     width: 30vw;
-    margin-right: 60vw;
+    margin-right: 1vw;
     margin-top: 20vh;
     border-radius: 15px;
   }
   
-  .first {
+  .home-p {
     width: 13%;
-    margin-left: 60vw;
+    height: 35vh;
+    margin-top: 10vh;
+    margin-left: 3vw;
     font-size: 1.5em;
     font-weight: 500;
     color: black;
@@ -38,28 +44,4 @@
   
   }
   
-  .second {
-    width: 13%;
-    margin-left: 60vw;
-    font-size: 1.5em;
-    font-weight: 500;
-    color: black;
-    background-color: white;
-    border-radius: 15px;
-    box-sizing: border-box;
-    padding: 20px;
   
-  }
-  
-  .third {
-    width: 13%;
-    margin-left: 60vw;
-    font-size: 1.5em;
-    font-weight: 500;
-    color: black;
-    background-color: white;
-    border-radius: 15px;
-    box-sizing: border-box;
-    padding: 20px;
-  
-  }
