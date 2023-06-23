@@ -36,14 +36,46 @@ class Api {
     }
   }
 
-  verify = async (token) => {
-    const { data } = await this.api.get('/auth/verify', {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    })
-    return data;
+  async addIncome (income){
+    try {
+      const {data} = await this.api.post('/income',income);
+      return data;
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
   }
+
+  async addOutcome (outcome){
+    try {
+      const {data} = await this.api.post('/outcome',outcome);
+      return data;
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
+  }
+
+  async getIncomes () {
+    try {
+      const {data} = await this.api.get('/income');
+      return data;
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
+  }
+
+  async getMonthlyStatement( selectedMonth, selectedYear) {
+    try {
+      const { data } = await this.api.get(`/statement/${selectedMonth}/${selectedYear}`);
+      return data;
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
+  }
+
 }
 
 

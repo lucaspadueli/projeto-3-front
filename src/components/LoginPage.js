@@ -18,6 +18,7 @@ function LoginPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      
       const {authToken} = await api.login({ username, password });
       storeToken(authToken);
       authenticateUser();
