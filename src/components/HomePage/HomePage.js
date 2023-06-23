@@ -9,21 +9,22 @@ function HomePage ()  {
         <div className="home-page">
     <Navbar/>
             <h1 id = "h1-home">Finanças em Equilíbrio</h1>
+            <div className="images">
 
             <img src={homePageImg1} alt="financeiro.jpg" />
 
-            <p className="first">
+            <p className="home-p">
             Gerencie com precisão todas as despesas dos seus cartões de crédito.
             </p>
 
-            <p className="second">
-            Gerencie seus objetivos financeiros de curto, médio e longo prazo. Fique cada vez mais perto de alcançar seus sonhos e objetivos.
+            <p className="home-p">
+            Gerencie seus objetivos financeiros de curto, médio e longo prazo. 
             </p>
 
-            <p className="third">
+            <p className="home-p">
             Acompanhe seu crescimento rumo a sua independência financeira.
             </p>
-        
+        </div>
         </div>
     )
 }
