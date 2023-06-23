@@ -1,0 +1,66 @@
+.home-page {
+    background-color: white;
+    text-align: center;
+    background-image: url("../images/wallpaper.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding-top: 14vh;
+    padding-bottom: 35vh;
+  }
+  
+  h1 {
+    display: inline-flex;
+    margin: 5vh auto;
+    color: white;
+    font-weight: 400;
+    font-family: 'Alkatra', cursive;
+    ;
+    font-size: 3em;
+  }
+  
+  .home-page img {
+    width: 30vw;
+    margin-right: 60vw;
+    margin-top: 20vh;
+    border-radius: 15px;
+  }
+  
+  .first {
+    width: 13%;
+    margin-left: 60vw;
+    font-size: 1.5em;
+    font-weight: 500;
+    color: black;
+    background-color: white;
+    border-radius: 15px;
+    box-sizing: border-box;
+    padding: 20px;
+  
+  }
+  
+  .second {
+    width: 13%;
+    margin-left: 60vw;
+    font-size: 1.5em;
+    font-weight: 500;
+    color: black;
+    background-color: white;
+    border-radius: 15px;
+    box-sizing: border-box;
+    padding: 20px;
+  
+  }
+  
+  .third {
+    width: 13%;
+    margin-left: 60vw;
+    font-size: 1.5em;
+    font-weight: 500;
+    color: black;
+    background-color: white;
+    border-radius: 15px;
+    box-sizing: border-box;
+    padding: 20px;
+  
+  }
