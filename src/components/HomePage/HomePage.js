@@ -1,12 +1,13 @@
 import React from "react";
 import "./HomePage.css"
 import homePageImg1 from "../images/financeiro.jpg";
-
+import Navbar from "../NavBar/NavBar";
 function HomePage ()  {
 
     return (
+        
         <div className="home-page">
-
+    <Navbar/>
             <h1 id = "h1-home">Finanças em Equilíbrio</h1>
 
             <img src={homePageImg1} alt="financeiro.jpg" />
