@@ -5,7 +5,7 @@ const SobrePage = () => {
 
     return (
         <div className="sobre-page">
-            <h1> Projeto Finanças em Equilíbrio: Controle seus Gastos e Transforme sua Vida </h1>
+            <h1 id = "h1-sobre"> Projeto Finanças em Equilíbrio: Controle seus Gastos e Transforme sua Vida </h1>
             <div className="sobre-oprojeto">
 
                 <p><b>Introdução:</b>

@@ -10,14 +10,14 @@ import IsAnon from './components/IsAnon';
 import AddIncomePage from './components/AddIncomePage';
 import AddOutcomePage from './components/AddOutcomePage';
 import StatementMonth from './components/StatementMonth';
-
+import WelcomePage from './components/WelcomePage';
 import OneOutcomePage from './components/OneOutcomePage';
 import OneIncomePage from './components/OneIncomePage';
 
 const App = () => {
   return (
     <div>
-      <NavBar />
+      
       <Routes>
 
         <Route path='/' element={<HomePage />} />
@@ -29,6 +29,7 @@ const App = () => {
         <Route path="monthly-statement" element = {<StatementMonth/>} />
         <Route path = "/outcome/:outcomeId" element = {<OneOutcomePage/>} />
         <Route path = "/income/:incomeId" element = {<OneIncomePage/>} />
+        <Route path = "/welcome-page" element ={<WelcomePage/>}   />
       </Routes>
 
 

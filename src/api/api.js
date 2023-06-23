@@ -18,9 +18,9 @@ class Api {
     })
   }
 
-  async signup({ username, email, password }) {
+  async signup({ username,name,gender, email, password }) {
     try {
-      const { data } = await this.api.post('/auth/signup', { username, email, password });
+      const { data } = await this.api.post('/auth/signup', { username, name, gender, email, password });
       return data;
     } catch (error) {
       throw error;
@@ -132,6 +132,18 @@ class Api {
       throw error;
     }
   }
+
+  async getUserInfo() {
+    try {
+      const {data} = await this.api.get('/user-info');
+      return data;
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
+  }
+
+
 }
 
 
