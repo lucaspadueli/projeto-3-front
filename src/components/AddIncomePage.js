@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import api from "../api/api";
 import './addIncome.css';
 const years = ["2022", "2023"];
@@ -45,6 +46,7 @@ const navigate = useNavigate();
 return(
 
 <div className="add-income">
+<Link to = "/welcome-page"> <button>Voltar </button></Link>
 
 <h3 id="h3-add-income"> Adicione suas entradas de dinheiro aqui.</h3>
 

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import api from "../api/api";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import './addOutcome.css';
 const years = ["2022", "2023"];
 const months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
@@ -55,7 +56,7 @@ const navigate = useNavigate();
 return(
 
 <div className="add-outcome">
-
+<Link to = "/welcome-page"> <button>Voltar </button></Link>
 <h3 id = "h3-add-outcome"> Adicione suas despesas abaixo:</h3>
 
 <p className="warning"> Atenção: Todos os campos são obrigatórios. </p>

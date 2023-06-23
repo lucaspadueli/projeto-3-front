@@ -1,6 +1,7 @@
 .statement-page{
     height: 100vh;
     background-color:rgb(145, 204, 221);
+    overflow: scroll;
 }
 
 #h3-stt{
@@ -19,7 +20,7 @@
 }
 
 .button-statement{
-    height: 7vh;
+    height: 3vh;
     width: 10vw;
     border: 1px solid rgba(0, 0, 0, 0.523);
     border-radius: 15px;
@@ -49,4 +50,8 @@
         font-size: 1.2em;
     font-weight: 600;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    }
+
+    .totals{
+        margin-bottom: 30vh;
     }

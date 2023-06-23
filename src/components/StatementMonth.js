@@ -42,7 +42,7 @@ console.log(monthlyStatement)
     return (
         
         <div className="statement-page"> 
-
+<Link to = "/welcome-page"> <button>Voltar </button></Link>
         <h3 id="h3-stt"> Verifique aqui todo o seu extrato mensal:</h3>
 
 
