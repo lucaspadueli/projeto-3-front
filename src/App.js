@@ -5,6 +5,7 @@ import Footer from './components/Footer/Footer';
 import SignupPage from './components/SignupPage';
 import LoginPage from './components/LoginPage';
 import IsAnon from './components/IsAnon';
+import IsPrivate from './components/IsPrivate';
 import AddIncomePage from './components/AddIncomePage';
 import AddOutcomePage from './components/AddOutcomePage';
 import StatementMonth from './components/StatementMonth';
@@ -22,12 +23,12 @@ const App = () => {
         <Route path='/Sobre' element={<SobrePage />} />
         <Route path='/signup' element={<IsAnon><SignupPage /></IsAnon>} />
         <Route path='/login' element={<IsAnon><LoginPage /></IsAnon>} />
-        <Route path="/add-income" element={<AddIncomePage/>} />
-        <Route path= "add-outcome" element={<AddOutcomePage/>} />
-        <Route path="monthly-statement" element = {<StatementMonth/>} />
-        <Route path = "/outcome/:outcomeId" element = {<OneOutcomePage/>} />
-        <Route path = "/income/:incomeId" element = {<OneIncomePage/>} />
-        <Route path = "/welcome-page" element ={<WelcomePage/>}   />
+        <Route path="/add-income" element={<IsPrivate> <AddIncomePage/></IsPrivate>} />
+        <Route path= "add-outcome" element={<IsPrivate><AddOutcomePage/></IsPrivate>} />
+        <Route path="monthly-statement" element = {<IsPrivate><StatementMonth/></IsPrivate>} />
+        <Route path = "/outcome/:outcomeId" element = {<IsPrivate><OneOutcomePage/></IsPrivate>} />
+        <Route path = "/income/:incomeId" element = {<IsPrivate><OneIncomePage/></IsPrivate>} />
+        <Route path = "/welcome-page" element ={<WelcomePage/>}/>
       </Routes>
 
 
