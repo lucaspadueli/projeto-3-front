@@ -5,12 +5,10 @@ import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer';
 import SignupPage from './components/SignupPage';
 import LoginPage from './components/LoginPage';
-
- import IsPrivate from './components/IsPrivate';
+import IsPrivate from './components/IsPrivate';
 import IsAnon from './components/IsAnon';
 import AddIncomePage from './components/AddIncomePage';
 import AddOutcomePage from './components/AddOutcomePage';
-import StatementPage from './components/StatementPage';
 import StatementMonth from './components/StatementMonth';
 
 import OneOutcomePage from './components/OneOutcomePage';
