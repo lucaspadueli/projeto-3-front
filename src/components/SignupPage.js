@@ -76,7 +76,7 @@ function SignupPage() {
         <input id='email' type='email' value={email} onChange={handleEmail} />
 
         <label htmlFor='password'>Password</label>
-        <input id='password' type='text' value={password} onChange={handlePassword} />
+        <input id='password' type='password' value={password} onChange={handlePassword} />
 
         <button type='submit'>Signup</button>
       </form>
