@@ -80,7 +80,7 @@ console.log(monthlyStatement)
         <ul> 
             <h3> Entradas do mês {selectedMonth} do ano {selectedYear}: </h3>
         {monthlyStatement?.incomes.map((income)=>(
-            <li key = {income._id}> Descrição:{income.description} Valor: ${income.value} usuário: {income.user} 
+            <li key = {income._id}> Descrição:{income.description} Valor: ${income.value} 
             
             <Link to = {`/income/${income._id}`}>
             <button className="button-statement">Editar/Remover</button>
