@@ -4,7 +4,7 @@ import { AuthContext } from "../context/auth.context";
 import "./NavBar.css";
 
 function Navbar() {
-  const { isLoggedIn, handleLogout } = useContext(AuthContext);
+  const { isLoggedIn } = useContext(AuthContext);
 
   return (
     <div className="nav-bar">
@@ -18,22 +18,7 @@ function Navbar() {
           </li>
         </div>
         <div className="direita">
-          {isLoggedIn ? (
-            <>
-              <li className="hidden">
-                <Link to="/signup">Cadastrar</Link>
-              </li>
-              <li className="hidden">
-                <Link to="/login">Entrar</Link>
-              </li>
-              <li>
-                <Link to="/perfil">Perfil</Link>
-              </li>
-              <li>
-                <button onClick={handleLogout}>Sair</button>
-              </li>
-            </>
-          ) : (
+          {!isLoggedIn && (
             <>
               <li>
                 <Link to="/signup">Cadastrar</Link>
