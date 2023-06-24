@@ -18,21 +18,17 @@ const App = () => {
     <div>
       
       <Routes>
-    
         <Route path='/' element={<HomePage />} />
         <Route path='/Sobre' element={<SobrePage />} />
-        <Route path='/signup' element={<IsAnon><SignupPage /></IsAnon>} />
+        <Route path='/signup' element={<IsAnon> <SignupPage /></IsAnon>} />
         <Route path='/login' element={<IsAnon><LoginPage /></IsAnon>} />
         <Route path="/add-income" element={<IsPrivate> <AddIncomePage/></IsPrivate>} />
         <Route path= "add-outcome" element={<IsPrivate><AddOutcomePage/></IsPrivate>} />
         <Route path="monthly-statement" element = {<IsPrivate><StatementMonth/></IsPrivate>} />
         <Route path = "/outcome/:outcomeId" element = {<IsPrivate><OneOutcomePage/></IsPrivate>} />
         <Route path = "/income/:incomeId" element = {<IsPrivate><OneIncomePage/></IsPrivate>} />
-        <Route path = "/welcome-page" element ={<WelcomePage/>}/>
-      </Routes>
-
-
-        
+        <Route path = "/welcome-page" element ={ <WelcomePage/>}/>
+      </Routes>        
 <Footer />
       
 

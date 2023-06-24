@@ -1,6 +1,6 @@
 import "./SobrePage.css";
 import React from "react";
-import Navbar from "../NavBar/NavBar";
+import Navbar from "../NavBar";
 const SobrePage = () => {
 
     return (
