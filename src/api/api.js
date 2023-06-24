@@ -36,6 +36,15 @@ class Api {
     }
   }
 
+  async verify () {
+    try {
+      const {data} = await this.api.get('/auth/verify')
+      return data;
+    } catch (error) {
+      throw error;
+    }
+  }
+
   async addIncome (income){
     try {
       const {data} = await this.api.post('/income',income);

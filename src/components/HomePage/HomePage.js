@@ -1,7 +1,7 @@
 import React from "react";
 import "./HomePage.css"
 import homePageImg1 from "../images/financeiro.jpg";
-import Navbar from "../NavBar/NavBar";
+import Navbar from "../NavBar";
 function HomePage ()  {
 
     return (

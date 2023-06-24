@@ -3,7 +3,7 @@ import api from "../api/api";
 import { Link } from "react-router-dom";
 import './welcome-page.css';
 import welcomeImage from './images/welcome--page-principal.jpeg';
-import Navbar from "./NavBar/NavBar";
+import Navbar from "./NavBar";
 function WelcomePage(){
 const [user,setUser] = useState([]);
 

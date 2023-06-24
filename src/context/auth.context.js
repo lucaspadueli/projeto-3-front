@@ -1,9 +1,11 @@
 import { createContext, useState, useEffect, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import api from "../api/api";
 
 const AuthContext = createContext();
 
 function AuthProviderWrapper({ children }) {
+  const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState(null);
@@ -21,6 +23,7 @@ function AuthProviderWrapper({ children }) {
   };
 
   const authenticateUser = useCallback(async () => {
+    
     const storedToken = retrieveToken();
 
     if (!storedToken) {
@@ -30,7 +33,7 @@ function AuthProviderWrapper({ children }) {
       return;
     }
     try {
-      const user = await api.verify(storedToken);
+      const user = await api.verify();
       setIsLoggedIn(true);
       setIsLoading(false);
       setUser(user);
@@ -44,6 +47,8 @@ function AuthProviderWrapper({ children }) {
   const logoutUser = () => {
     removeToken();
     authenticateUser();
+    navigate('/login');
+
   };
 
   useEffect(() => {
