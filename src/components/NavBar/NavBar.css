@@ -45,3 +45,20 @@
     justify-content: flex-end;
 
 }
+
+.nav-bar .direita {
+    display: flex;
+  }
+  
+  .nav-bar .direita > li {
+    margin-left: 10px;
+  }
+  
+  .nav-bar .direita > li:first-child {
+    margin-left: 0;
+  }
+  
+  .nav-bar .direita:not(:empty) {
+    margin-left: auto;
+  }
+  
