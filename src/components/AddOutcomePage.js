@@ -22,7 +22,7 @@ const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if(!description || !value || expenseType || !year || !month){
+    if(!description || !value || !expenseType || !year || !month){
       return
     }
     const outcome = {
